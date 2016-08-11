@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Bruno Molteni UI Demo</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=2" />
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="vendor/css/angular-material.min.css"/>
+    <link rel="stylesheet" href="vendor/css/animate.css"/>
+    <link rel="stylesheet" href="styles/styles.css"/>
+  </head>
+
+  <body ng-app="app">
+
+    <div class="page {{pageClass}}" ng-view>
+    </div>
+
+    <script src="vendor/js/angular.min.js"></script>
+    <script src="vendor/js/angular-animate.min.js"></script>
+    <script src="vendor/js/angular-route.min.js"></script>
+    <script src="vendor/js/angular-aria.min.js"></script>
+    <script src="vendor/js/ngStorage.min.js"></script>
+    <script src="vendor/js/angular-material.min.js"></script>
+    <script src="vendor/js/angular-material-icons.min.js"></script>
+    
+
+    <script src="app/directors/DirectorsService.js"></script>
+    <script src="app/directors/details/DirectorsDetailsController.js"></script>
+    <script src="app/directors/list/DirectorsListController.js"></script>
+
+    <script src="app/tmdb/tmdbService.js"></script>
+
+    <script src="app/app.js"></script>
+
+    <script src="app/filters/birthFilter.js"></script>
+    <script src="app/filters/ageFilter.js"></script>
+    <script src="app/filters/yearFilter.js"></script>
+    <script src="app/filters/imgFilter.js"></script>
+    <script src="app/filters/wikiFilter.js"></script>
+  </body>
+</html>

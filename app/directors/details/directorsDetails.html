@@ -1,0 +1,44 @@
+<md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools">
+    <md-button class="md-icon-button" aria-label="Go Back" ng-click="openList()">
+        <ng-md-icon icon="arrow_back" size="48" style="fill: #000"></ng-md-icon>
+        <md-tooltip md-direction="bottom">Go Back</md-tooltip>
+    </md-button>
+    <h1>{{director.name}}</h1>
+  </div>
+</md-toolbar>
+
+<md-content layout="column" layout-gt-md="row" >
+
+  <section class="bio" flex layout="column">
+    <div flex>
+      <img ng-src="{{director.profile_path | img}}" alt="{{director.name}}" />
+      <p ng-bind="director.biography | wiki"></p> 
+    </div>
+  </section>
+
+  <section flex layout="column">
+    <p flex>
+      <strong >Place of birth:</strong>
+      <span ng-bind="director.place_of_birth"></span>
+    </p>
+    <p flex>
+      <strong >Birthday:</strong>
+      <span ng-bind="director.birthday | birth"></span>
+    </p>
+    <p flex>
+      <strong >Age:</strong>
+      <span ng-bind="director.birthday | age"></span>
+    </p>
+    <h4 flex>Blockbusters:</h4>
+    <div flex layout="row">
+      <a flex ng-repeat="movie in director.known_for track by $index" ng-href="//www.themoviedb.org/movie/{{movie.id}}" target="_blank" class="movie">
+          <img ng-show="movie.poster_path" ng-src="{{movie.poster_path | img}}" alt="movie.title" />
+          <p >
+            <strong ng-bind="movie.title"></strong>
+            <span ng-bind="movie.release_date | year"></span>
+          </p>
+      </a>
+    </div>
+  </section>
+</md-content>

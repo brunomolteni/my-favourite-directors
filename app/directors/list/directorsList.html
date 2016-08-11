@@ -1,0 +1,22 @@
+<md-toolbar md-scroll-shrink>
+  <div class="md-toolbar-tools">
+    <h1>
+      My Favourite Directors <span>(in no particular order)</span>
+    </h1>
+  </div>
+</md-toolbar>
+<md-content flex>
+  <md-list>
+    <md-list-item class="md-3-line" ng-class="item.sex" ng-repeat="item in directors track by $index" ng-click="openDetails($index)" aria-label="View Details" layout>
+      <div class="md-list-item-text" layout="column">
+        <h3 ng-bind="item.name"></h3>
+        <h4 ng-bind="'Born in ' + item.place_of_birth + ' on ' + (item.birthday)"></h4>
+        <p ng-bind="'Known for: ' + item.known_for[0].title"></p>
+      </div>
+      <md-button class="md-icon-button" aria-label="View Details" ng-click="openList($index)">
+          <ng-md-icon icon="find_in_page" style="fill: #FF8F00"></ng-md-icon>
+          <md-tooltip md-direction="left">View Details</md-tooltip>
+      </md-button>
+    </md-list-item>
+  </md-list>
+</md-content>

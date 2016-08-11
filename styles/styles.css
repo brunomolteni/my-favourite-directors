@@ -1,0 +1,130 @@
+html{
+  background-color: #e6e6e6;
+  background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPSc1MCcgaGVpZ2h0PSc1MCcgdmlld0JveD0nMCAwIDUwIDUwJz4KCTxsaW5lIHgxPScxJyB5MT0nMCcgeDI9JzUxJyB5Mj0nNTAnIHN0cm9rZT0nI2RiZGJkYicgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nNDknIHkxPScwJyB4Mj0nLTEnIHkyPSc1MCcgc3Ryb2tlPScjZGJkYmRiJyBzdHJva2Utd2lkdGg9JzInLz4KCTxsaW5lIHgxPSc1MCcgeTE9JzAnIHgyPScwJyB5Mj0nNTAnIHN0cm9rZT0nI2VkZWRlZCcgc3Ryb2tlLXdpZHRoPScyJy8+Cgk8bGluZSB4MT0nMCcgeTE9JzAnIHgyPSc1MCcgeTI9JzUwJyBzdHJva2U9JyNlZGVkZWQnIHN0cm9rZS13aWR0aD0nMicvPgo8L3N2Zz4=); /*  http://www.svgeneration.com/recipes/Soft-Tiles/ */
+  height: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+body{
+  background: transparent;
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+md-content{
+  background-color: white;
+  padding: 0 0 20px;
+}
+
+h1 span {
+  font-size: 12px;
+  opacity: 0.8;
+}
+/*  --------  LISTA  ------------- */
+md-list-item{
+  border-bottom: 1px dashed #bbb
+}
+md-list a {
+  text-decoration: none;
+  text-align: left;
+}
+md-list-item h3{
+  font-size: 24px;
+}
+md-list-item.M{
+  border-left: 4px solid #8D9BD8;
+}
+md-list-item.F{
+  border-left: 4px solid #E272B2;
+}
+
+md-list-item.ng-enter,
+md-list-item.ng-move {
+  transition:0.5s linear all;
+
+  opacity:0;
+}
+
+md-list-item.ng-enter.ng-enter-active,
+md-list-item.ng-move.ng-move-active {
+  opacity:1;
+}
+
+md-list-item.ng-enter-stagger,
+md-list-item.ng-move-stagger {
+  transition-delay:0.1s;
+  transition-duration:0;
+}
+
+/*  --------  DETALLES  ------------- */
+
+.details section{
+  padding: 20px;
+}
+.details section h4{
+  font-size: 18px;
+}
+.details section p{
+  margin-top: 0;
+  flex-grow: 0;
+}
+.details section span{
+  display: block;
+}
+.details h2, .bio p{
+  display: inline;
+}
+.details img{
+  width: 140px;
+  height: auto;
+  float: left;
+  margin: 0 20px 10px 0;
+}
+.details h4{
+  flex-grow:0;
+}
+.movie{
+  overflow: hidden;
+  position: relative;
+  margin: 0 10px;
+}
+.movie p{
+  position: absolute;
+  bottom: -10px;
+  width: 100%;
+  margin-bottom: 0;
+  left: 0;
+  background-color: #FFC107;
+  padding: 5px;
+  font-size: 12px;
+  max-height: 0px;
+  transition-duration: 0.3s;
+}
+.movie:hover p{
+  max-height: 50px;
+  padding-bottom: 15px;
+  color: white;
+}
+.movie img{
+  width: 100%;
+  margin: 0;
+}
+
+/*  --------  TRANSICIONES  ------------- */
+.page{
+  transition-duration: 0.5s;
+}
+.list.ng-enter-active{
+  animation: fadeInLeft 0.5s both ease-in;
+  animation-delay: 0.5s;
+}
+.list.ng-leave-active{
+  animation: fadeOutLeft 0.5s both ease-in;
+}
+
+.details.ng-enter-active{
+  animation: fadeInRight 0.5s both ease-in;
+  animation-delay: 0.5s;
+}
+.details.ng-leave-active{
+  animation: fadeOutRight 0.5s both ease-in;
+}
