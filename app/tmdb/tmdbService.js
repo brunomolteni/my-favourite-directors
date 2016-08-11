@@ -12,14 +12,16 @@
       var cacheKey = JSON.stringify({action,params});
 
       if($localStorage[cacheKey]) cb($localStorage[cacheKey],def);
-      else $http.jsonp('https://api.themoviedb.org/3/'+action, {params: angular.merge( {'api_key': 'da9e6b65704e307cdeef5c72c24ed47a','callback': 'JSON_CALLBACK'},params), cache: $templateCache})
-        .success(function(data){
-          $localStorage[cacheKey] = data;
-          cb(data,def);
-        })
-        .error(function(){
-          def.reject(false);
-        });
+      else{
+        $http({method: 'JSONP', url:angular.copy('https://api.themoviedb.org/3/'+action) ,params: angular.merge( {'api_key': 'da9e6b65704e307cdeef5c72c24ed47a','callback': 'JSON_CALLBACK'},params), cache: false})
+          .success(function(data){
+            $localStorage[cacheKey] = data;
+            cb(data,def);
+          })
+          .error(function(){
+            def.reject(false);
+          });
+      } 
 
       return def.promise;
     }
@@ -36,7 +38,7 @@
     }
     
     function searchPerson(name){
-      return callApi('search/person/',
+      return callApi('search/person',
                     {query: name},
                     function(data,def){
                       if(data && data.total_results > 0){
