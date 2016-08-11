@@ -14,11 +14,11 @@ md-content{
   background-color: white;
   padding: 0 0 20px;
 }
-
 h1 span {
   font-size: 12px;
   opacity: 0.8;
 }
+
 /*  --------  LISTA  ------------- */
 md-list-item{
   border-bottom: 1px dashed #bbb

@@ -6,10 +6,11 @@ Small UI to showcase my frontend skills, has the following features:
 
 - SPA using Angular.js
 - UI components from Angular Material
+- Promise based wrapper for The Movie Database
 - Accesibility (Keyboard Navigation and Screen Readers)
-- Fully Responsive
+- Fully responsive flexbox layout
 - Localstorage cache to avoid swamping the API
-- Page transition using ng-animate and animate.css
+- Page and item transitions using ng-animate and animate.css
 
 TODO: 
 ==

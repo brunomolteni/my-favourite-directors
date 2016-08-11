@@ -11,6 +11,7 @@
   ])
 
   .config(function($routeProvider, $mdThemingProvider) {
+      // configuramos las rutas
       $routeProvider
        .when('/directors', {
         templateUrl: 'app/directors/list/directorsList.html',

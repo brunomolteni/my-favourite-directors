@@ -4,7 +4,7 @@
   angular.module('directors',[])
          .service('directorsService', ['$q','tmdbService', DirectorsService]);
 
-  // Servicio que tiene la respuesta hardcodeada para devolver los datos que estaban en directors.json y director.json
+  // Servicio que usa tmdbService para buscar la lista de directores basado en un array de nombres
   function DirectorsService($q,tmdbService){
     var directorsList,
         favList = [ 'Quentin Tarantino',
@@ -38,14 +38,17 @@
     // hacemos return de una API basada en promises, con metodos para obtener lista completa y detalles de un director
     return {
       loadAllDirectors : function() {
+        //si ya tenemos la lista de directores devolver una promise resuelta con la lista
         if(directorsList) return $q.when(directorsList);
         else {   
+            // transformamos la lista de nombres a una lista de promises
             var promises = favList.map(function(name){
                 return getDirectorByName(name);
             });
 
             var allPromises = $q.all(promises);
 
+            // una vez que todas las promises se resuelven, pasamos los datos al scope
             allPromises.then(function(list){
                 directorsList = list;
             })
@@ -54,7 +57,6 @@
         }
       },
       getDetails : function(index) {
-        
         if(directorsList) return $q.when(directorsList[index]);
         else return getDirectorByName(favList[index]);
       },

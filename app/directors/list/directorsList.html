@@ -13,7 +13,7 @@
         <h4 ng-bind="'Born in ' + item.place_of_birth + ' on ' + (item.birthday)"></h4>
         <p ng-bind="'Known for: ' + item.known_for[0].title"></p>
       </div>
-      <md-button class="md-icon-button" aria-label="View Details" ng-click="openList($index)">
+      <md-button class="md-icon-button" aria-label="View Details" ng-click="openList($index)" hide-sm>
           <ng-md-icon icon="find_in_page" style="fill: #FF8F00"></ng-md-icon>
           <md-tooltip md-direction="left">View Details</md-tooltip>
       </md-button>

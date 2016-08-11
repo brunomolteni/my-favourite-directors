@@ -13,7 +13,8 @@
     };
 
     // Cargamos los detalles del director seleccionado
-    directorsService.getDetails( $route.current.params.directorId ).then(function(dir){
+    directorsService.getDetails( $route.current.params.directorId )
+    .then(function(dir){
       $scope.director = dir;
     })
 

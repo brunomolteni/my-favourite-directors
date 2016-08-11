@@ -12,12 +12,11 @@
       $location.path('/director/'+id);
     };
 
-
     // Cargamos la lista de directores
     directorsService.loadAllDirectors()
-          .then( function( list ) {
-            $scope.directors = list;
-          });
+    .then( function( list ) {
+      $scope.directors = list;
+    });
 
   }
 
