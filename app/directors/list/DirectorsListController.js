@@ -12,7 +12,7 @@
       $location.path('/director/'+id);
     };
 
-    // Cargamos la lista de directores
+    // load the directors list
     directorsService.loadAllDirectors()
     .then( function( list ) {
       $scope.directors = list;

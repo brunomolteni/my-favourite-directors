@@ -19,7 +19,7 @@ h1 span {
   opacity: 0.8;
 }
 
-/*  --------  LISTA  ------------- */
+/*  --------  LIST  ------------- */
 md-list-item{
   border-bottom: 1px dashed #bbb
 }
@@ -55,7 +55,7 @@ md-list-item.ng-move-stagger {
   transition-duration:0;
 }
 
-/*  --------  DETALLES  ------------- */
+/*  --------  DETAILS  ------------- */
 
 .details section{
   padding: 20px;
@@ -109,7 +109,7 @@ md-list-item.ng-move-stagger {
   margin: 0;
 }
 
-/*  --------  TRANSICIONES  ------------- */
+/*  --------  TRANSITIONS  ------------- */
 .page{
   transition-duration: 0.5s;
 }
