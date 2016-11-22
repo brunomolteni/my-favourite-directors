@@ -10,14 +10,18 @@
 
 <md-content layout="column" layout-gt-md="row" >
 
-  <section class="bio" flex layout="column">
+  <div flex layout="row" layout-align="space-around" ng-hide="director">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+  </div>
+
+  <section class="bio" flex layout="column" ng-show="director">
     <div flex>
       <img ng-src="{{director.profile_path | img}}" alt="{{director.name}}" />
       <p ng-bind="director.biography | wiki"></p> 
     </div>
   </section>
 
-  <section flex layout="column">
+  <section flex layout="column" ng-show="director">
     <p flex>
       <strong >Place of birth:</strong>
       <span ng-bind="director.place_of_birth"></span>

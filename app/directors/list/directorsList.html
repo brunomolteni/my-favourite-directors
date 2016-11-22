@@ -6,7 +6,10 @@
   </div>
 </md-toolbar>
 <md-content flex>
-  <md-list>
+  <div layout="row" layout-align="space-around" ng-hide="directors.length">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+  </div>
+  <md-list ng-show="directors.length">
     <md-list-item class="md-3-line" ng-class="item.sex" ng-repeat="item in directors track by $index" ng-click="openDetails($index)" aria-label="View Details" layout>
       <div class="md-list-item-text" layout="column">
         <h3 ng-bind="item.name"></h3>
